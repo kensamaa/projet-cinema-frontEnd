@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CinemaService } from '../services/cinema.service';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-cinema',
@@ -11,6 +12,8 @@ export class CinemaComponent implements OnInit {
 
   public villes;
   public cinemas;
+  public currentville;
+  public currentCinema;
   constructor(private cinemaService:CinemaService) { }
 
   ngOnInit(): void {
@@ -25,6 +28,7 @@ export class CinemaComponent implements OnInit {
   }
   //get the cinemas depends on the ville
   onGetCinema(v){
+    this.currentville=v;
     this.cinemaService.getCinemas(v)
     .subscribe(data=>{
       this.cinemas=data;
