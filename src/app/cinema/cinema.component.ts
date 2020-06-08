@@ -33,7 +33,7 @@ export class CinemaComponent implements OnInit {
   //get the cinemas depends on the ville
   onGetCinema(v){
     this.salles=undefined; 
-    console.log(v)
+    //console.log(v)
     this.currentville=v;
     this.cinemaService.getCinemas(v)
     .subscribe(data=>{
@@ -46,7 +46,7 @@ export class CinemaComponent implements OnInit {
   onGetSalles(c)
   {
     this.currentCinema=c;
-    console.log(c)
+    //console.log(c)
     this.cinemaService.getSalles(c)
     .subscribe(data=>{
       this.salles=data;//after we get list salle boucl for each salle to get the projection of the salle 
@@ -83,6 +83,7 @@ export class CinemaComponent implements OnInit {
   }
   onSelectTicket(t)
   {
+    console.log(t)
     t.selected=true;
     if(!t.selected)
     {
@@ -97,7 +98,7 @@ export class CinemaComponent implements OnInit {
     console.log(this.selectedTickets)
   }
   getTicketClass(t){
-    let str="btn ticket";
+    let str="btn tickets ";
     if(t.reserve==true)
     {
       str+="btn-danger";
