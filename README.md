@@ -10,6 +10,6 @@ as for backend i used <strong>spring</strong> as framework with java as programm
 
 ![](pics/1.png)
 
-![](pics/1.png)
+![](pics/2.png)
 
-![](pics/1.png)
+![](pics/3.png)
